@@ -29,9 +29,9 @@ export default function Cadastro() {
             .from('tb_aluno')
             .insert(
                 {
-                    nomeAluno, 
-                    idadeAluno, 
-                    emailAluno
+                    nome: nomeAluno,
+                    idade: idadeAluno,
+                    email: emailAluno
                 }
             )
         .select()
