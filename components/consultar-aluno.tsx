@@ -30,7 +30,7 @@ export default function ConsultarAluno(){
             text1: 'ERRO',
             text2: 'Erro ao editar aluno' + id + nome,
         });
-        router.push({pathname: '/(tabs)/cadastro', params: {id: id}});
+        router.push({pathname: '/(tabs)/alterar', params: {id: id}});
     }
     async function excluirAluno(id: number, nome: string){
         const {error} = await supabase
