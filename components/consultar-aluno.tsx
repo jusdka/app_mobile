@@ -61,14 +61,14 @@ export default function ConsultarAluno(){
                 keyExtractor={(item) => item.id.toString()}
                 renderItem = {({item}) =>(
                     <View>
-                        <Text>{item.nome}</Text>
-                        <Text>{item.idade}</Text>
-                        <Text>{item.email}</Text>
+                        <Text style = {styles.name}>{item.nome}</Text>
+                        <Text style = {styles.meta}>{item.idade}</Text>
+                        <Text style = {styles.meta}>{item.email}</Text>
 
-                        <TouchableOpacity onPress={()=> editarAluno(item.id, item.nome)}>
+                        <TouchableOpacity style={styles.buttonAlterar} onPress={()=> editarAluno(item.id, item.nome)}>
                             <Text>Editar</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={()=> excluirAluno(item.id, item.nome)}>
+                        <TouchableOpacity style={styles.buttonExcluir} onPress={()=> excluirAluno(item.id, item.nome)}>
                             <Text>Excluir</Text>
                         </TouchableOpacity>
 
@@ -81,10 +81,65 @@ export default function ConsultarAluno(){
     )
 };
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            backgroundColor: "#fff",
-            color: "#000",
-        }
-    })
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f3f4f6',
+        paddingHorizontal: 16,
+    },
+    listContent: {
+        flexGrow: 1,
+        paddingTop: 50,
+        paddingBottom: 24,
+    },
+    title: {
+        fontSize: 22,
+        fontWeight: '700',
+        color: '#111827',
+        marginBottom: 16,
+    },
+    card: {
+        backgroundColor: '#ffffff',
+        padding: 16,
+        borderRadius: 12,
+        marginBottom: 12,
+        borderWidth: 1,
+        borderColor: '#e5e7eb',
+        shadowColor: '#000',
+        shadowOpacity: 0.06,
+        shadowRadius: 8,
+        shadowOffset: { width: 0, height: 2 },
+        elevation: 2,
+    },
+    name: {
+        fontSize: 18,
+        fontWeight: '700',
+        color: '#111827',
+        marginBottom: 8,
+    },
+    meta: {
+        fontSize: 14,
+        color: '#4b5563',
+        marginBottom: 4,
+    },
+    emptyText: {
+        textAlign: 'center',
+        color: '#6b7280',
+        fontSize: 16,
+        marginTop: 32,
+    },
+    buttonAlterar:{
+        backgroundColor: '#2563eb',
+        padding: 12,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginTop: 16,
+    },
+    buttonExcluir:{
+        backgroundColor: '#ef4444',
+        padding: 12,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginTop: 16,
+    }
+})
